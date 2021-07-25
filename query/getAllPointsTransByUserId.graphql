@@ -1,5 +1,5 @@
 query getAllUserRanking {
-  getAllUserRanking(user_id: "9") {
+  getAllUserRanking(user_id: "6", company:"robinhood", top_100:true) {
     status
     data {
       user_id
