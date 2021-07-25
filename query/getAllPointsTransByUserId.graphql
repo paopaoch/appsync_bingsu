@@ -1,3 +1,9 @@
+query authoriseUser {
+  authoriseUser(email_or_phone: "chanopsethiwan233@gmail.com", password: "123") {
+    status
+  }
+}
+
 query predictionPoints {
   calculatePoints(id: "6", id_user: true, company: "robinhood", source: [100.58457117905004,13.725473463355671], dest: [100.60122284953393, 13.709097631083452], name: "Yamaha Diversion", item_no: "5", write: false, restaurant: "GinGubKo") {
     status
@@ -150,7 +156,7 @@ query getBingsuUserById {
 }
 
 mutation update_user {
-  update_user(user_id: "9", email: "Chap123"){
+  update_user(user_id: "eb3f5d2f-740a-4ec2-b368-8df03c406ddb", email: "Chap123"){
     status
   }
 }
