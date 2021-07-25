@@ -57,6 +57,13 @@ type Status {
 	status: Int!
 }
 
+type ClientAppConnectionBody {
+    carbon_emission_g: Float
+    points: Int
+    save_status: String
+    insert_status: String
+}
+
 # ------LIST DATATYPE------
 type ListBingsuCoinsTransaction {
 	status: Int!
@@ -77,6 +84,11 @@ type ListBingsuUser {
 type ListBingsuVoucher {
 	status: Int!
 	data: [BingsuVoucher]
+}
+
+type ClientAppConnection {
+	status: Int!
+	body: ClientAppConnectionBody
 }
 
 type Message {
