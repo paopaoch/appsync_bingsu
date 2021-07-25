@@ -1,3 +1,15 @@
+query calculatePoints {
+  calculatePoints(id: "b5f5b860-6c31-464d-b855-d9ed12a7acaa", id_user: false, company: "robinhood", source: [100.58457117905004,13.725473463355671], dest: [100.60122284953393, 13.709097631083452], name: "Yamaha Diversion", item_no: "5", write: false, restaurant: "GinGubKo") {
+    status
+    body {
+      carbon_emission_g
+      points
+      save_status
+      insert_status
+    }
+  }
+}
+
 query getAllUserRanking {
   getAllUserRanking(user_id: "6", company:"robinhood", top_100:true) {
     status
