@@ -117,6 +117,11 @@ query getBingsuUserById {
       foodpanda_id
       co2_amount
     }
+    tier {
+      grab
+      foodpanda
+      robinhood
+    }
   }
 }
 

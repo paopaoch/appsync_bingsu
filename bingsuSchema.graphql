@@ -160,4 +160,5 @@ type Query {
 	getBingsuPointsTransById(transaction_id: ID!): ListBingsuPointsTrans
 	getAllPointsTransByUserId(user_id: ID!): ListBingsuPointsTrans
 	getAllUserRanking(user_id: ID!, company: String!, top_100: Boolean!): ListBingsuUserNoTier
+	calculatePoints(id: ID!, id_user: Boolean!, company: String!, source: [Float]!, dest: [Float]!, name: String!, item_no: String, write: Boolean!, restaurant: String!): ClientAppConnection
 }
