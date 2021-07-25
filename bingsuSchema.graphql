@@ -69,6 +69,11 @@ type ClientAppGetId {
 	id: String!
 }
 
+type GetVoucherByType {
+	status: Int!
+	voucher_id: String!
+}
+
 # ------LIST DATATYPE------
 type ListBingsuUserNoTier {
 	status: Int!
@@ -174,4 +179,5 @@ type Query {
 	calculatePoints(id: ID!, id_user: Boolean!, company: String!, source: [Float]!, dest: [Float]!, name: String!, item_no: String, write: Boolean!, restaurant: String!): ClientAppConnection
 	authoriseUser(email_or_phone: String!, password: String!): Status
 	getClientAppId(user_id: String!, company: String!): ClientAppGetId
+	getVoucherByType(voucher_type: String!): GetVoucherByType
 }
