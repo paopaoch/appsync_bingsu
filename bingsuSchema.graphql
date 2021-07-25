@@ -64,6 +64,11 @@ type ClientAppConnectionBody {
     insert_status: String
 }
 
+type ClientAppGetId {
+	status: Int!
+	id: String!
+}
+
 # ------LIST DATATYPE------
 type ListBingsuUserNoTier {
 	status: Int!
@@ -162,4 +167,5 @@ type Query {
 	getAllUserRanking(user_id: ID!, company: String!, top_100: Boolean!): ListBingsuUserNoTier
 	calculatePoints(id: ID!, id_user: Boolean!, company: String!, source: [Float]!, dest: [Float]!, name: String!, item_no: String, write: Boolean!, restaurant: String!): ClientAppConnection
 	authoriseUser(email_or_phone: String!, password: String!): Status
+	getClientAppId(user_id: String!, company: String!): ClientAppGetId
 }
