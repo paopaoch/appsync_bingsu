@@ -65,6 +65,11 @@ type ClientAppConnectionBody {
 }
 
 # ------LIST DATATYPE------
+type ListBingsuUserNoTier {
+	status: Int!
+	data: [BingsuUser]
+}
+
 type ListBingsuCoinsTransaction {
 	status: Int!
 	data: [BingsuCoinsTransaction]
@@ -154,5 +159,5 @@ type Query {
 	getAvailableVouchers: ListBingsuVoucher
 	getBingsuPointsTransById(transaction_id: ID!): ListBingsuPointsTrans
 	getAllPointsTransByUserId(user_id: ID!): ListBingsuPointsTrans
-	getAllUserRanking(user_id: ID!, company: String!, top_100: Boolean!): ListBingsuUser
+	getAllUserRanking(user_id: ID!, company: String!, top_100: Boolean!): ListBingsuUserNoTier
 }
