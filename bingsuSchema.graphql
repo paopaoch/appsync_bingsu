@@ -1,0 +1,145 @@
+
+# ------DATA TYPES------
+type BingsuCoinsTransaction {
+	coin_transaction_id: String!
+	user_id: String!
+	date_time: String!
+	carbon_coins: Int!
+}
+
+type BingsuPointsTrans {
+	transaction_id: ID!
+	user_id: String!
+	date_time: String!
+	points_amount: Int!
+	company_name: String!
+	co2_amount: Float!
+	restaurant_name: String!
+	distance: Float!
+	item: Int!
+	packaging_co2: Float
+	packaging_amount: Int
+}
+
+type BingsuTier {
+	grab: String!
+	foodpanda: String!
+	robinhood: String!
+}
+
+type BingsuUser {
+	user_id: ID!
+	username: String!
+	password: String!
+	grab_points: Int
+	robinhood_points: Int
+	foodpanda_points: Int
+	coins: Int!
+	email: String!
+	phone_number: String!
+	grab_id: String
+	robinhood_id: String
+	foodpanda_id: String
+	co2_amount: Float!
+}
+
+type BingsuVoucher {
+	voucher_id: ID!
+	voucher_type: String!
+	date_time: String!
+	status: String!
+	title: String!
+	description: String
+	icon_name: String
+}
+
+type Status {
+	status: Int!
+}
+
+# ------LIST DATATYPE------
+type ListBingsuCoinsTransaction {
+	status: Int!
+	data: [BingsuCoinsTransaction]
+}
+
+type ListBingsuPointsTrans {
+	status: Int!
+	data: [BingsuPointsTrans]
+}
+
+type ListBingsuUser {
+	status: Int!
+	data: [BingsuUser]
+	tier: BingsuTier
+}
+
+type ListBingsuVoucher {
+	status: Int!
+	data: [BingsuVoucher]
+}
+
+type Message {
+	data: String!
+}
+
+# ------MUTATION------
+type Mutation {
+	add_user(
+		username: String!,
+		password: String!,
+		grab_points: Int,
+		robinhood_points: Int,
+		foodpanda_points: Int,
+		coins: Int!,
+		email: String!,
+		phone_number: String!,
+		grab_id: String,
+		robinhood_id: String,
+		foodpanda_id: String,
+		co2_amount: Float!
+	): Status!
+	update_user(
+		user_id: ID!,
+		username: String,
+		password: String,
+		grab_points: Int,
+		robinhood_points: Int,
+		foodpanda_points: Int,
+		coins: Int,
+		email: String,
+		phone_number: String,
+		grab_id: String,
+		robinhood_id: String,
+		foodpanda_id: String,
+		co2_amount: Float
+	): Status!
+	add_voucher(
+		voucher_type: String!,
+		status: String!,
+		title: String!,
+		description: String,
+		icon_name: String
+	): Status!
+	add_points_trans(
+		user_id: String!,
+		points_amount: Int!,
+		company_name: String!,
+		co2_amount: Float!,
+		restaurant_name: String!,
+		distance: Float!,
+		item: Int!,
+		packaging_co2: Float,
+		packaging_amount: Int
+	): Status!
+}
+
+# ------QUERY------
+type Query {
+	getBingsuUserById(user_id: ID!): ListBingsuUser
+	getBingsuCoinsTransaction(user_id: ID!): ListBingsuCoinsTransaction
+	getBingsuVoucherById(voucher_id: ID!): ListBingsuVoucher
+	getAvailableVouchers: ListBingsuVoucher
+	getBingsuPointsTransById(transaction_id: ID!): ListBingsuPointsTrans
+	getAllPointsTransByUserId(user_id: ID!): ListBingsuPointsTrans
+}

@@ -1,0 +1,18 @@
+query MyQuery {
+  getAllPointsTransByUserId(user_id: "1") {
+    status
+    data {
+      co2_amount
+      company_name
+      date_time
+      distance
+      item
+      packaging_amount
+      packaging_co2
+      points_amount
+      restaurant_name
+      transaction_id
+      user_id
+    }
+  }
+}
