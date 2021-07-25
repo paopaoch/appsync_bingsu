@@ -1,3 +1,24 @@
+query getAllUserRanking {
+  getAllUserRanking(user_id: "9") {
+    status
+    data {
+      user_id
+      username
+      password
+      grab_points
+      robinhood_points
+      foodpanda_points
+      coins
+      email
+      phone_number
+      grab_id
+      robinhood_id
+      foodpanda_id
+      co2_amount
+    }
+  }
+}
+
 query getAllPointsTransByUserId {
   getAllPointsTransByUserId(user_id:"6") {
     status
