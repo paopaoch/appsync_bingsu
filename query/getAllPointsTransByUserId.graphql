@@ -7,7 +7,7 @@ query getTotalSum {
 }
 
 mutation add_donation_trans {
-  add_donation_trans(user_id: "1", amount_baht: 100, amount_tree: 3, co2_offset_amount: 20){
+  add_donation_trans(user_id: "1", amount_baht: 100){
     status
   }
 }

@@ -23,7 +23,7 @@ type BingsuPointsTrans {
 
 type TotalSum {
 	status: Int!
-	total_amount_tree: Int
+	total_amount_tree: Float
 	total_co2_offset_amount: Float
 }
 
@@ -200,10 +200,8 @@ type Mutation {
 		packaging_amount: Int
 	): Status!
 	add_donation_trans(
-		user_id: String!,
+		user_id: String,
 		amount_baht: Float!,
-		amount_tree: Int!,
-		co2_offset_amount: Float!
 	): Status!
 }
 
