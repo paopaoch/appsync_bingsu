@@ -115,6 +115,10 @@ type GetTotalSumCarbon {
 	data: GetTotalSumCarbonData
 }
 
+type GetCountUser {
+	status: Int!
+	user_number: Int!
+}
 
 # ------LIST DATATYPE------
 type ListBingsuUserNoTier {
@@ -222,4 +226,5 @@ type Query {
 	getVoucherByType(voucher_type: String!): GetVoucherByType
 	getTotalSum: TotalSum
 	getTotalCarbonSum: GetTotalSumCarbon
+	getCountUser: GetCountUser
 }
