@@ -47,6 +47,8 @@ type BingsuUser {
 	robinhood_id: String
 	foodpanda_id: String
 	co2_amount: Float!
+	total_amount_tree: Float!
+	total_co2_offset_amount: Float! 
 }
 
 type BingsuUserIndex {

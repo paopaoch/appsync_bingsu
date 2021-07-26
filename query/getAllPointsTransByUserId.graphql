@@ -161,6 +161,8 @@ query getBingsuUserById {
       robinhood_id
       foodpanda_id
       co2_amount
+      total_amount_tree
+      total_co2_offset_amount
     }
     tier {
       grab
