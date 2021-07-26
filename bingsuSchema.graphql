@@ -43,6 +43,23 @@ type BingsuUser {
 	co2_amount: Float!
 }
 
+type BingsuUserIndex {
+	index: int
+	user_id: ID!
+	username: String!
+	password: String!
+	grab_points: Int
+	robinhood_points: Int
+	foodpanda_points: Int
+	coins: Int!
+	email: String!
+	phone_number: String!
+	grab_id: String
+	robinhood_id: String
+	foodpanda_id: String
+	co2_amount: Float!
+}
+
 type BingsuVoucher {
 	voucher_id: ID!
 	voucher_type: String!
@@ -77,7 +94,7 @@ type GetVoucherByType {
 # ------LIST DATATYPE------
 type ListBingsuUserNoTier {
 	status: Int!
-	data: [BingsuUser]
+	data: [BingsuUserIndex]
 }
 
 type ListBingsuCoinsTransaction {
