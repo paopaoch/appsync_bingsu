@@ -102,6 +102,16 @@ type GetVoucherByType {
 	voucher_id: String!
 }
 
+type GetTotalSumCarbon {
+	status: Int!
+	data: {
+		foodpanda: Float!
+		grab: Float!
+		robinhood: Float!
+	}
+}
+
+
 # ------LIST DATATYPE------
 type ListBingsuUserNoTier {
 	status: Int!
@@ -209,4 +219,5 @@ type Query {
 	getClientAppId(user_id: String!, company: String!): ClientAppGetId
 	getVoucherByType(voucher_type: String!): GetVoucherByType
 	getTotalSum: TotalSum
+	getTotalCarbonSum: GetTotalSumCarbon
 }
