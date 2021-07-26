@@ -50,7 +50,7 @@ type BingsuUser {
 }
 
 type BingsuUserIndex {
-	index: int
+	index: Int
 	user_id: ID!
 	username: String!
 	password: String!
