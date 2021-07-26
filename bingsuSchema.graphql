@@ -21,6 +21,12 @@ type BingsuPointsTrans {
 	packaging_amount: Int
 }
 
+type TotalSum {
+	status: Int!
+	total_amount_tree: Int
+	total_co2_offset_amount: Float
+}
+
 type BingsuTier {
 	grab: String!
 	foodpanda: String!
@@ -185,4 +191,5 @@ type Query {
 	authoriseUser(email_or_phone: String!, password: String!): StatusAndUserId
 	getClientAppId(user_id: String!, company: String!): ClientAppGetId
 	getVoucherByType(voucher_type: String!): GetVoucherByType
+	getTotalSum: TotalSum
 }
