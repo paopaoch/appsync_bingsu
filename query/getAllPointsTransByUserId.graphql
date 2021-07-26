@@ -7,6 +7,7 @@ mutation add_donation_trans {
 query authoriseUser {
   authoriseUser(email_or_phone: "chanopsethiwan233@gmail.com", password: "123") {
     status
+    user_id
   }
 }
 

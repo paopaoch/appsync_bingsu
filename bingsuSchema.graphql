@@ -57,6 +57,11 @@ type Status {
 	status: Int!
 }
 
+type StatusAndUserId {
+	status: Int!
+	user_id: String
+}
+
 type ClientAppConnectionBody {
     carbon_emission_g: Float
     points: Int
@@ -177,7 +182,7 @@ type Query {
 	getAllPointsTransByUserId(user_id: ID!): ListBingsuPointsTrans
 	getAllUserRanking(user_id: ID!, company: String!, top_100: Boolean!): ListBingsuUserNoTier
 	calculatePoints(id: ID!, id_user: Boolean!, company: String!, source: [Float]!, dest: [Float]!, name: String!, item_no: String, write: Boolean!, restaurant: String!): ClientAppConnection
-	authoriseUser(email_or_phone: String!, password: String!): Status
+	authoriseUser(email_or_phone: String!, password: String!): StatusAndUserId
 	getClientAppId(user_id: String!, company: String!): ClientAppGetId
 	getVoucherByType(voucher_type: String!): GetVoucherByType
 }
