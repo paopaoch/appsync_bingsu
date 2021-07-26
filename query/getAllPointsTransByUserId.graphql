@@ -1,3 +1,11 @@
+query getTotalSum {
+  getTotalSum {
+    status
+    total_amount_tree
+    total_co2_offset_amount
+  }
+}
+
 mutation add_donation_trans {
   add_donation_trans(user_id: "1", amount_baht: 100, amount_tree: 3, co2_offset_amount: 20){
     status
@@ -7,6 +15,7 @@ mutation add_donation_trans {
 query authoriseUser {
   authoriseUser(email_or_phone: "chanopsethiwan233@gmail.com", password: "123") {
     status
+    user_id
   }
 }
 
