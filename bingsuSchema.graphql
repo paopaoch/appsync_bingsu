@@ -102,13 +102,15 @@ type GetVoucherByType {
 	voucher_id: String!
 }
 
+type GetTotalSumCarbonData {
+	foodpanda: Float!
+	grab: Float!
+	robinhood: Float!
+}
+
 type GetTotalSumCarbon {
 	status: Int!
-	data: {
-		foodpanda: Float!
-		grab: Float!
-		robinhood: Float!
-	}
+	data: GetTotalSumCarbonData
 }
 
 
