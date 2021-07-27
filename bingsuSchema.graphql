@@ -120,12 +120,17 @@ type GetCountUser {
 	user_number: Int!
 }
 
-type TotalLastWeek {
-	company: String!
+type TotalCo2 {
 	day: String!
-	total_co2_amount: Float!
+	grab: Float!
+	robinhood: Float!
+	foodpanda: Float!
 }
 # ------LIST DATATYPE------
+type ListTotalCo2 {
+	status: Int!
+	data: [TotalCo2]
+}
 type ListBingsuUserNoTier {
 	status: Int!
 	data: [BingsuUserIndex]
@@ -161,10 +166,6 @@ type Message {
 	data: String!
 }
 
-type ListTotalLastWeek {
-	status: Int!
-	data: [TotalLastWeek]
-}
 
 # ------MUTATION------
 type Mutation {
@@ -216,6 +217,11 @@ type Mutation {
 		user_id: String,
 		amount_baht: Float!,
 	): Status!
+	update_total_co2_amount(
+		date: String,
+		company: String!,
+		co2_amount: Float!
+	): Status!
 }
 
 # ------QUERY------
@@ -234,5 +240,5 @@ type Query {
 	getTotalSum: TotalSum
 	getTotalCarbonSum: GetTotalSumCarbon
 	getCountUser: GetCountUser
-	getTotalCo2AmountByCompany(company: String!): ListTotalLastWeek
+	getTotalCo2AmountByCompany: ListTotalCo2
 }

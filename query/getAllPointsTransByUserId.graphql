@@ -1,10 +1,17 @@
+mutation update_total_co2_amount {
+  update_total_co2_amount(company: "grab", co2_amount: 1){
+    status
+  }
+}
+
 query getTotalCo2AmountByCompany {
-  getTotalCo2AmountByCompany(company: "Grab") {
+  getTotalCo2AmountByCompany {
     status
     data {
-      company
       day
-      total_co2_amount
+      grab
+      robinhood
+      foodpanda
     }
   }
 }
