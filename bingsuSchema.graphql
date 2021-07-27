@@ -171,9 +171,6 @@ type Mutation {
 	add_user(
 		username: String!,
 		password: String!,
-		grab_points: Int,
-		robinhood_points: Int,
-		foodpanda_points: Int,
 		coins: Int!,
 		email: String!,
 		phone_number: String!,
