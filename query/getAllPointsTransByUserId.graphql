@@ -1,3 +1,14 @@
+query getTotalCo2AmountByCompany {
+  getTotalCo2AmountByCompany(company: "Grab") {
+    status
+    data {
+      company
+      day
+      total_co2_amount
+    }
+  }
+}
+
 query getTotalSum {
   getTotalSum {
     status

@@ -120,6 +120,11 @@ type GetCountUser {
 	user_number: Int!
 }
 
+type TotalLastWeek {
+	company: String!
+	day: String!
+	total_co2_amount: Float!
+}
 # ------LIST DATATYPE------
 type ListBingsuUserNoTier {
 	status: Int!
@@ -154,6 +159,11 @@ type ClientAppConnection {
 
 type Message {
 	data: String!
+}
+
+type ListTotalLastWeek {
+	status: Int!
+	data: [TotalLastWeek]
 }
 
 # ------MUTATION------
@@ -227,4 +237,5 @@ type Query {
 	getTotalSum: TotalSum
 	getTotalCarbonSum: GetTotalSumCarbon
 	getCountUser: GetCountUser
+	getTotalCo2AmountByCompany(company: String!): ListTotalLastWeek
 }
