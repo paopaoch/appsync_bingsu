@@ -200,7 +200,10 @@ type Mutation {
 		status: String!,
 		title: String!,
 		description: String,
-		icon_name: String
+		icon_name: String,
+		voucher_conditions: String,
+		voucher_detail: String,
+		coin_needed: Int
 	): Status!
 	add_points_trans(
 		user_id: String!,

@@ -157,7 +157,7 @@ query getBingsuVoucherById {
 }
 
 mutation add_voucher {
-  add_voucher(voucher_type: "One time", status: "Available", title:"1", description:"2", icon_name:"3"){
+  add_voucher(voucher_type: "One time", status: "Available", title: "1", description: "2", icon_name: "3", voucher_conditions: "No", voucher_detail: "Nothing", coin_needed: 2){
     status
   }
 }
