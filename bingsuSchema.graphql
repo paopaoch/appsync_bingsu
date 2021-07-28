@@ -126,6 +126,12 @@ type TotalCo2 {
 	robinhood: Float!
 	foodpanda: Float!
 }
+
+type AddUser {
+	status: String!
+	user_id: String!
+}
+
 # ------LIST DATATYPE------
 type ListTotalCo2 {
 	status: Int!
@@ -179,7 +185,7 @@ type Mutation {
 		robinhood_id: String,
 		foodpanda_id: String,
 		co2_amount: Float!
-	): Status!
+	): AddUser
 	update_user(
 		user_id: ID!,
 		username: String,
