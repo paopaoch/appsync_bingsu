@@ -177,8 +177,7 @@ type Mutation {
 		phone_number: String!,
 		grab_id: String,
 		robinhood_id: String,
-		foodpanda_id: String,
-		co2_amount: Float!
+		foodpanda_id: String
 	): Status!
 	update_user(
 		user_id: ID!,
