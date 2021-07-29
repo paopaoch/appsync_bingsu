@@ -199,6 +199,7 @@ mutation update_user {
 mutation add_user {
   add_user(username: "Chap12345", password:"123", coins:2, email:"chanopsethiwan233@gmail.com", phone_number: "0909917777", grab_id: "chap", robinhood_id: "chap", foodpanda_id: "chap"){
     status
+    user_id
   }
 }
 
