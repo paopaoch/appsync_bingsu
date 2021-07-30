@@ -245,7 +245,7 @@ type Query {
 	calculatePoints(id: ID!, id_user: Boolean!, company: String!, source: [Float]!, dest: [Float]!, name: String!, item_no: String, write: Boolean!, restaurant: String!): ClientAppConnection
 	authoriseUser(email_or_phone: String!, password: String!): StatusAndUserId
 	getClientAppId(user_id: String!, company: String!): ClientAppGetId
-	getVoucherByType(voucher_type: String!): GetVoucherByType
+	getVoucherByType(voucher_type: String!, user_id: String!): GetVoucherByType
 	getTotalSum: TotalSum
 	getTotalCarbonSum: GetTotalSumCarbon
 	getCountUser: GetCountUser
