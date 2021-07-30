@@ -1,3 +1,18 @@
+query getDonationTransByUserId {
+  getDonationTransByUserId(user_id: "1") {
+    status
+    data {
+      transaction_id
+      user_id
+      date_time
+      amount_baht
+      amount_tree
+      co2_offset_amount
+      coins_amount
+    }
+  }
+}
+
 mutation update_total_co2_amount {
   update_total_co2_amount(company: "grab", co2_amount: 1){
     status

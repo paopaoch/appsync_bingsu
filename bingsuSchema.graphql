@@ -132,7 +132,21 @@ type AddUser {
 	user_id: String!
 }
 
+type GetDonationTrans {
+	transaction_id: ID!
+	user_id: String!
+	date_time: String!
+	amount_baht: Int!
+	amount_tree: Float!
+	co2_offset_amount: Float!
+	coins_amount: Int!
+}
 # ------LIST DATATYPE------
+type ListGetDonationTrans {
+	status: Int!
+	data: [GetDonationTrans]
+}
+
 type ListTotalCo2 {
 	status: Int!
 	data: [TotalCo2]
@@ -249,4 +263,5 @@ type Query {
 	getTotalCarbonSum: GetTotalSumCarbon
 	getCountUser: GetCountUser
 	getTotalCo2AmountByCompany: ListTotalCo2
+	getDonationTransByUserId(user_id: String!): ListGetDonationTrans
 }
