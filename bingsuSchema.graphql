@@ -19,6 +19,7 @@ type BingsuPointsTrans {
 	item: Int!
 	packaging_co2: Float
 	packaging_amount: Int
+	packaging_flag: Boolean
 }
 
 type TotalSum {
@@ -132,7 +133,21 @@ type AddUser {
 	user_id: String!
 }
 
+type GetDonationTrans {
+	transaction_id: ID!
+	user_id: String!
+	date_time: String!
+	amount_baht: Int!
+	amount_tree: Float!
+	co2_offset_amount: Float!
+	coins_amount: Int!
+}
 # ------LIST DATATYPE------
+type ListGetDonationTrans {
+	status: Int!
+	data: [GetDonationTrans]
+}
+
 type ListTotalCo2 {
 	status: Int!
 	data: [TotalCo2]
@@ -184,7 +199,6 @@ type Mutation {
 		grab_id: String,
 		robinhood_id: String,
 		foodpanda_id: String,
-		co2_amount: Float!
 	): AddUser
 	update_user(
 		user_id: ID!,
@@ -231,6 +245,11 @@ type Mutation {
 		company: String!,
 		co2_amount: Float!
 	): Status!
+	update_points_trans_for_packaging(
+		transaction_id: ID!,
+		user_id: String!,
+		packaging_amount: Int!
+	): Status!
 }
 
 # ------QUERY------
@@ -250,4 +269,5 @@ type Query {
 	getTotalCarbonSum: GetTotalSumCarbon
 	getCountUser: GetCountUser
 	getTotalCo2AmountByCompany: ListTotalCo2
+	getDonationTransByUserId(user_id: String!): ListGetDonationTrans
 }

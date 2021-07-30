@@ -1,3 +1,24 @@
+mutation update_points_trans_for_packaging {
+  update_points_trans_for_packaging(transaction_id: "00c8bf3b-2e10-49e1-992d-632cf52a679e", user_id: "60119b2d-86b2-455a-b661-3f7aa6eef7be", packaging_amount: 10) {
+    status
+  }
+}
+
+query getDonationTransByUserId {
+  getDonationTransByUserId(user_id: "1") {
+    status
+    data {
+      transaction_id
+      user_id
+      date_time
+      amount_baht
+      amount_tree
+      co2_offset_amount
+      coins_amount
+    }
+  }
+}
+
 mutation update_total_co2_amount {
   update_total_co2_amount(company: "grab", co2_amount: 1){
     status
@@ -197,8 +218,9 @@ mutation update_user {
 }
 
 mutation add_user {
-  add_user(username: "Chap12345", password:"123", coins:2, email:"chanopsethiwan233@gmail.com", phone_number: "0909917777", grab_id: "chap", robinhood_id: "chap", foodpanda_id: "chap", co2_amount: 10){
+  add_user(username: "Chap12345", password:"123", coins:2, email:"chanopsethiwan233@gmail.com", phone_number: "0909917777", grab_id: "chap", robinhood_id: "chap", foodpanda_id: "chap"){
     status
+    user_id
   }
 }
 
