@@ -19,6 +19,7 @@ type BingsuPointsTrans {
 	item: Int!
 	packaging_co2: Float
 	packaging_amount: Int
+	packaging_flag: Boolean
 }
 
 type TotalSum {
@@ -243,6 +244,11 @@ type Mutation {
 		date: String,
 		company: String!,
 		co2_amount: Float!
+	): Status!
+	update_points_trans_for_packaging(
+		transaction_id: ID!,
+		user_id: String!,
+		packaging_amount: Int!
 	): Status!
 }
 
