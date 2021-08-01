@@ -129,7 +129,7 @@ type TotalCo2 {
 }
 
 type AddUser {
-	status: String!
+	status: Int!
 	user_id: String!
 }
 
