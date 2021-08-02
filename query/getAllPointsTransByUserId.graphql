@@ -1,3 +1,9 @@
+mutation add_many_random_users {
+  add_many_random_users {
+    status
+  }
+}
+
 mutation update_points_trans_for_packaging {
   update_points_trans_for_packaging(transaction_id: "00c8bf3b-2e10-49e1-992d-632cf52a679e", user_id: "60119b2d-86b2-455a-b661-3f7aa6eef7be", packaging_amount: 10) {
     status

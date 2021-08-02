@@ -250,6 +250,7 @@ type Mutation {
 		user_id: String!,
 		packaging_amount: Int!
 	): Status!
+	add_many_random_users: Status!
 }
 
 # ------QUERY------
